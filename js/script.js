@@ -1,4 +1,3 @@
-
 let lvl = 3, score = 0, gameSequence = [], playerSequence = [], isPlayerTurn = false;
 window.addEventListener('load', function () {
     const scoreEle = document.querySelector('.score__info')
