@@ -1,7 +1,7 @@
 body{
     display: grid;
     place-items: center;
-    margin-top: 20%;
+    margin-top: 10%;
 }
 .simon-game {
   position: relative;
@@ -12,14 +12,14 @@ body{
   border: 15px solid rgba(16, 24, 51, 0.603);
   box-shadow: 2px 2px 5px black;
   font-family: sans-serif;
-
+  margin-top: 120px;
 }
 .score{
     position: absolute;
-    top: -70px;
-    left: 120px;
+    top: -151px;
+    left: 38px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 2rem;
+    font-size: 4rem;
     font-family: fantasy;
     color: #334049;
     text-shadow: 1px 1px 2px rgb(105, 103, 103)
@@ -37,8 +37,8 @@ body{
   height: 180px;
   border: 2px solid rgb(248, 241, 241);
   box-shadow: 2px 2px 5px black;
-  filter: brightness(0.5);
-  transition: all 0.5s;
+  filter: brightness(0.55);
+  transition: all 0.2s;
 }
 .color-panel-green {
   border-radius: 100% 0 70% 0%;
