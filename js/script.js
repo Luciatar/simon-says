@@ -1,4 +1,4 @@
-let lvl = 3, score = 0, gameSequence = [], playerSequence = [], isPlayerTurn = false;
+let lvl = 1, score = 0, gameSequence = [], playerSequence = [], isPlayerTurn = false;
 window.addEventListener('load', function () {
     const scoreEle = document.querySelector('.score__info')
     const btnStart = document.querySelector('.start-game');
@@ -20,12 +20,11 @@ window.addEventListener('load', function () {
         }
         checkWinCond();
     }
-    function generateSequence(dificulty) {
-        let sequence = [];
-        for (let i = 0; i < dificulty; i++) {
-            sequence.push(Math.floor(Math.random() * 4));
-        }
-        return sequence;
+    function randNum() {
+       return Math.floor(Math.random() * 4)
+    }
+    function sequenceAddColor() {
+           gameSequence.push(randNum())
     }
     function checkWinCond() {
         if (playerSequence.length !== gameSequence.length) {
@@ -49,7 +48,6 @@ window.addEventListener('load', function () {
                 scoreEle.textContent = ('00' + score * 10).slice(-3)
                 setTimeout(() => {
                     isPlayerTurn = false;
-                    gameSequence = [];
                     playerSequence = [];
                     btnStart.children[0].textContent = "Ready?";
                     setTimeout(() => {
@@ -75,7 +73,7 @@ window.addEventListener('load', function () {
     }
     function play() {
         btnStart.children[0].textContent = "Watch!";
-        gameSequence = [...generateSequence(lvl + score)];
+        sequenceAddColor();
         playSequence(gameSequence);
         setTimeout(() => {
             btnStart.children[0].textContent = "Your turn";
