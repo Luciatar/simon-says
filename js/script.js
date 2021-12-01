@@ -1,4 +1,4 @@
-let lvl = 1, score = 0, gameSequence = [], playerSequence = [], isPlayerTurn = false;
+let score = 0, gameSequence = [], playerSequence = [], isPlayerTurn = false;
 window.addEventListener('load', function () {
     const scoreEle = document.querySelector('.score__info')
     const btnStart = document.querySelector('.start-game');
@@ -22,9 +22,6 @@ window.addEventListener('load', function () {
     }
     function randNum() {
        return Math.floor(Math.random() * 4)
-    }
-    function sequenceAddColor() {
-           gameSequence.push(randNum())
     }
     function checkWinCond() {
         if (playerSequence.length !== gameSequence.length) {
@@ -73,12 +70,12 @@ window.addEventListener('load', function () {
     }
     function play() {
         btnStart.children[0].textContent = "Watch!";
-        sequenceAddColor();
+        gameSequence.push(randNum())
         playSequence(gameSequence);
         setTimeout(() => {
             btnStart.children[0].textContent = "Your turn";
             isPlayerTurn = true;
-        }, lvl * 1000);
+        }, gameSequence.length * 1000);
     }
 }, false);
 
